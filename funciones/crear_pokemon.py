@@ -15,7 +15,7 @@ def crear_pokemon(nombre: str, tipo: str, ataques: list) -> dict:
         (dict): Retorna un diccionario con todos los atributos y sus caracteristicas
     """
 
-    hp = random.randint(100, 120)  # HP aleatorio entre 100 y 120
+    hp = random.randint(70, 80)  # HP aleatorio entre 70 y 80
     atributos = {
         "nombre": nombre,
         "tipo": tipo,

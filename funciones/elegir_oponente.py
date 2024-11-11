@@ -29,7 +29,7 @@ def elegir_oponente() -> dict:
     }
     
     # Elegir una opción aleatoria de entre las claves del diccionario
-     # Elegir una opción aleatoria de entre las claves del diccionario
+    # Elegir una opción aleatoria de entre las claves del diccionario
     # explicación ----->
     # oponentes.keys(): es un objeto de tipo dict_keys, que se ve como una lista, pero no es una lista propiamente dicha. Keys() es un método de los diccionarios en Python que devuelve una vista de todas las claves en el diccionario
     # a función list() convierte el objeto dict_keys en una lista estándar de Python
