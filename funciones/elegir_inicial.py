@@ -64,7 +64,7 @@ def elegir_pokemon_inicial() -> dict:
 
     El resultado de pokemones.items() sería algo como esto:
 
-    python
+    python 
     Copiar código
     [("1", {"nombre": "Charmander", "tipo": "Fuego", "ataques": [...] }),
     ("2", {"nombre": "Squirtle", "tipo": "Agua", "ataques": [...] }),

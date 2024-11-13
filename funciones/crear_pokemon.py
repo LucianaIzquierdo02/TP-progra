@@ -3,7 +3,7 @@ import random
 #Genera un Pokémon con un nombre, tipo y ataques
 def crear_pokemon(nombre: str, tipo: str, ataques: list) -> dict:
     """ Crea un Pokemón con sus respectivos atributos, asignando hp 
-    aleatorio entre 100 y 120.
+    aleatorio entre 50 y 80.
     
     Args:
         nombre(str): Nombres del pokemón a crear
