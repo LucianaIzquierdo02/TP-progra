@@ -1,7 +1,6 @@
 from funciones.crear_pokemon import crear_pokemon
 from funciones.crear_ataques import crear_ataques
 
-#Permite al jugador elegir su Pokémon inicial
 def elegir_pokemon_inicial() -> dict:
     """ 
     Pemite al jugador elegir su pokemon inicial: 
@@ -36,10 +35,16 @@ def elegir_pokemon_inicial() -> dict:
         print(f"{opcion}: {pokemon['nombre']} (Tipo: {pokemon['tipo']})")
     
     # Validar la opción del jugador
-    opcion = input("Elige 1, 2 o 3: ")
-    while opcion not in pokemones:
-        opcion = input("Opción inválida. Elige 1, 2 o 3: ")
-
+    while True:
+        try:
+            opcion = input("Elige 1, 2 o 3: ")
+            if opcion not in pokemones:
+                raise ValueError("Opción inválida")
+            else:
+                break
+        except ValueError as e:
+            print(f"Error: {e}. Por favor, ingresa una opción válida.")
+    
     # Obtener el Pokémon elegido usando la opción validada
     pokemon_elegido = pokemones[opcion]
     
@@ -47,14 +52,14 @@ def elegir_pokemon_inicial() -> dict:
     pokemon_elegido = crear_pokemon(pokemon_elegido["nombre"], pokemon_elegido["tipo"], pokemon_elegido["ataques"])
     
     print(f"Has elegido a {pokemon_elegido['nombre']}")
-
-    # Imprimir los ataques del pokemon
+    
+    # Imprime los ataques del pokemon
     # "str".join():  Es un método de cadenas que se usa para unir los elementos de una lista (o cualquier iterable) en una sola cadena, usando el valor dentro de la cadena de la cual se llama el método como separador.
     # Los elementos de la lista de ataques estarán separados por una coma y un espacio cuando los unamos.
-
     print(f"Sus ataques son: {', '.join(pokemon_elegido['ataques'])}")
     
     return pokemon_elegido
+
 
     """ 
     explicacion...
