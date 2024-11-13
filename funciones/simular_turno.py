@@ -38,11 +38,13 @@ def simular_turno(atacante: dict, defensor: dict, es_oponente: bool = False) -> 
     # Reducimos los puntos de vida del defensor
     defensor["hp"] -= danio
     print(f"{atacante['nombre']} usa {ataque} y causa {danio} puntos de daño a {defensor['nombre']}")
-    print(f"{defensor['nombre']} tiene {defensor['hp']} hp restantes")
-    print(f"El ataque fue: {mensaje_efectividad}")
     
     # Verificamos si el defensor ha sido derrotado
     if defensor["hp"] <= 0:
+        print(f"{defensor['nombre']} no tiene más vida.")
         return f"{defensor['nombre']} ha sido derrotado."
+    else:
+        print(f"{defensor['nombre']} tiene {defensor['hp']} hp restantes")
+        print(f"El ataque fue: {mensaje_efectividad}")
     
     return None  # La batalla sigue si el defensor tiene vida
