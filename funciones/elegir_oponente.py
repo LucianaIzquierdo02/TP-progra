@@ -1,34 +1,18 @@
 import random
 from funciones.crear_pokemon import crear_pokemon
-from funciones.crear_ataques import crear_ataques
+from funciones.cargar_pokemones import cargar_pokemones
 
 #Elige un oponente aleatorio para el jugador
 def elegir_oponente() -> dict:
     
-    oponentes = {
-        "1": {
-            "nombre": "Cyndaquil",
-            "tipo": "Fuego",
-            "ataques": crear_ataques("Fuego")
-        },
-        "2": {
-            "nombre": "Totodile",
-            "tipo": "Agua",
-            "ataques": crear_ataques("Agua")
-        },
-        "3": {
-            "nombre": "Chikorita",
-            "tipo": "Planta",
-            "ataques": crear_ataques("Planta")
-        },
-        "4": {
-            "nombre": "Pikachu",
-            "tipo": "Electrico",
-            "ataques": crear_ataques("Electrico")
-        }
-    }
+    pokemones = cargar_pokemones()
     
-    # Elegir una opción aleatoria de entre las claves del diccionario
+    print("Tu oponente es elegido aleatoriamente:")
+    
+    
+    # Obtener las claves de los oponentes disponibles
+    oponentes = pokemones["oponentes"]
+    
     # Elegir una opción aleatoria de entre las claves del diccionario
     # explicación ----->
     # oponentes.keys(): es un objeto de tipo dict_keys, que se ve como una lista, pero no es una lista propiamente dicha. Keys() es un método de los diccionarios en Python que devuelve una vista de todas las claves en el diccionario

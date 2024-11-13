@@ -1,5 +1,5 @@
 from funciones.crear_pokemon import crear_pokemon
-from funciones.crear_ataques import crear_ataques
+from funciones.cargar_pokemones import cargar_pokemones
 
 def elegir_pokemon_inicial() -> dict:
     """ 
@@ -9,36 +9,20 @@ def elegir_pokemon_inicial() -> dict:
     Return:
         (str): El pokemón elegido
     """
-    # Diccionario de Pokémon disponibles
-    pokemones = {
-        "1": {
-            "nombre": "Charmander",
-            "tipo" : "Fuego",
-            "ataques": crear_ataques("Fuego")
-        },
-        "2": {
-            "nombre": "Squirtle",
-            "tipo" : "Agua",
-            "ataques": crear_ataques("Agua")
-        },
-        "3": {
-            "nombre": "Bulbasaur",
-            "tipo" : "Planta",
-            "ataques": crear_ataques("Planta")
-        }
-    }
+    # Cargar los Pokémon desde el archivo JSON
+    pokemones = cargar_pokemones()
     
     print("Elige tu Pokémon inicial:")
     
     # Mostrar todos los Pokémon disponibles para elegir
-    for opcion, pokemon in pokemones.items():
+    for opcion, pokemon in pokemones["jugador"].items():
         print(f"{opcion}: {pokemon['nombre']} (Tipo: {pokemon['tipo']})")
     
     # Validar la opción del jugador
     while True:
         try:
             opcion = input("Elige 1, 2 o 3: ")
-            if opcion not in pokemones:
+            if opcion not in pokemones["jugador"]:
                 raise ValueError("Opción inválida")
             else:
                 break
@@ -46,7 +30,7 @@ def elegir_pokemon_inicial() -> dict:
             print(f"Error: {e}. Por favor, ingresa una opción válida.")
     
     # Obtener el Pokémon elegido usando la opción validada
-    pokemon_elegido = pokemones[opcion]
+    pokemon_elegido = pokemones["jugador"][opcion]
     
     # Crear el diccionario completo del Pokémon con HP
     pokemon_elegido = crear_pokemon(pokemon_elegido["nombre"], pokemon_elegido["tipo"], pokemon_elegido["ataques"])

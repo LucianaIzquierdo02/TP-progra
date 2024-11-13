@@ -1,0 +1,41 @@
+{
+    "jugador": {
+        "1": {
+            "nombre": "Charmander",
+            "tipo": "Fuego",
+            "ataques": ["Lanzallamas", "Ember", "Puño fuego", "Golpe ardiente"]
+        },
+        "2": {
+            "nombre": "Squirtle",
+            "tipo": "Agua",
+            "ataques": ["Hidrobomba", "Pistola de agua", "Surf", "Golpe acuario"]
+        },
+        "3": {
+            "nombre": "Bulbasaur",
+            "tipo": "Planta",
+            "ataques": ["Rayo solar", "Hoja afilada", "Látigo cepa", "Drenaje"]
+        }
+    },
+    "oponentes": {
+        "1": {
+            "nombre": "Cyndaquil",
+            "tipo": "Fuego",
+            "ataques": ["Lanzallamas", "Ember", "Puño fuego", "Golpe ardiente"]
+        },
+        "2": {
+            "nombre": "Totodile",
+            "tipo": "Agua",
+            "ataques": ["Hidrobomba", "Pistola de agua", "Surf", "Golpe acuario"]
+        },
+        "3": {
+            "nombre": "Chikorita",
+            "tipo": "Planta",
+            "ataques": ["Rayo solar", "Hoja afilada", "Látigo cepa", "Drenaje"]
+        },
+        "4": {
+            "nombre": "Pikachu",
+            "tipo": "Electrico",
+            "ataques": ["Rayo", "Trueno", "Impactrueno", "Puño trueno"]
+        }
+    }
+}

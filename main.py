@@ -13,7 +13,10 @@ from funciones.calcular_efectividad import calcular_efectividad
 from funciones.batalla import batalla
 
 # Aquí comienza el juego
-if __name__ == "__main__":
+def main():
+    # Cargar los datos de Pokémon desde el archivo JSON
+    mostrar_reglas()
+    
     while True:
         mostrar_menu_opciones()
         opcion = input("Selecciona una opción: ")
@@ -24,7 +27,7 @@ if __name__ == "__main__":
             mostrar_efectividad_de_tipos()
         elif opcion == "3":
             # Elegir el Pokémon inicial y oponente
-            pokemon_jugador = elegir_pokemon_inicial()
+            pokemon_jugador = elegir_pokemon_inicial() 
             pokemon_oponente = elegir_oponente()
             
             # Comenzar la batalla
@@ -34,3 +37,5 @@ if __name__ == "__main__":
             break  # Sale del juego
         else:
             print("Opción inválida, por favor elige una opción válida.")
+
+main()
